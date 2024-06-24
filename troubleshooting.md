@@ -176,3 +176,23 @@ To view logs of a pod, select the pod and press `l` (lowercase L).
 [`k9s Official Documentation`](https://k9scli.io/).
 
 [`AWS CLI EKS Update-kubeconfig`](https://docs.aws.amazon.com/cli/latest/reference/eks/update-kubeconfig.html).
+
+
+# Troubleshooting Guide
+
+This section helps new DevOps engineers or anyone answer questions about accessing various endpoints like Flyte Console, Erisyon ControlPanel, Coder dashboard, and launching JupyterLab or Development workspaces from Coder.
+
+## 1. Check Tailnet Connectivity
+
+Ensure that your device is connected to the Tailnet. Many of the services require Tailnet access to be reachable. If Tailnet is not connected, reconnect and try accessing the service again
+
+## 2. Verify Cluster Health
+
+If Tailnet is connected and you still have issues accessing the services, check the cluster’s health:
+
+ ### Access the Cluster and Check Pods
+      Use `kubectl` or `k9s` to check if the necessary pods are running.
+ ```shell
+ kubectl get pods -n <namespace>
+ ``` 
+
