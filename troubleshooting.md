@@ -191,7 +191,8 @@ Ensure that your device is connected to the Tailnet. Many of the services requir
 If Tailnet is connected and you still have issues accessing the services, check the cluster’s health:
 
  ### Access the Cluster and Check Pods
-      Use `kubectl` or `k9s` to check if the necessary pods are running.
+ Use `kubectl` or `k9s` to check if the necessary pods are running.
+
  ```shell
  kubectl get pods -n <namespace>
  ``` 
