@@ -62,24 +62,25 @@ export AWS_SESSION_TOKEN="YourSessionToken"
 
 ##### Installation
 
-Awsume requires Python 3.5 or greater. Install AWSume using pipx:
+    Awsume requires Python 3.5 or greater. Install AWSume using pipx:
 
-```shell
-pipx install awsume
-``` 
+    ```shell
+    pipx install awsume
+    ``` 
 
-###### Alias Setup
+    ##### Alias Setup
 
-For unix-like systems, set up an alias for AWSume:
+    For unix-like systems, set up an alias for AWSume:
 
-```shell
-alias awsume=". awsume"
-``` 
-##### Commands to Assume Role
-
-###### Assume a Role by Profile Name:
-   
     ```shell
     alias awsume=". awsume"
     ``` 
-     - Replace `profile_name` with the name of your AWS profile.
+    ##### Commands to Assume Role
+
+        ##### Assume a Role by Profile Name:
+        
+            ```shell
+            alias awsume=". awsume"
+            ``` 
+        
+    - Replace `profile_name` with the name of your AWS profile:
