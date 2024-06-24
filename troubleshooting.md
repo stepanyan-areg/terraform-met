@@ -190,10 +190,19 @@ Ensure that your device is connected to the Tailnet. Many of the services requir
 
 If Tailnet is connected and you still have issues accessing the services, check the cluster’s health:
 
- ### Access the Cluster and Check Pods
+ ### 2.1 Access the Cluster and Check Pods
  Use `kubectl` or `k9s` to check if the necessary pods are running.
 
  ```shell
  kubectl get pods -n <namespace>
  ``` 
 
+ Use `:pods` in k9s and navigate to the relevant namespace.
+
+ ### 2.2 Access ArgoCD: Visit the ArgoCD URL directly to check the status of your applications and synchronization issues.
+
+ - [`Informatics Cluster`](http://argocd-informatics.erisyon.io)
+ - [`Software Cluster`](http://argocd-software.erisyon.io)
+ - [`Staging Cluster`](http://argocd-staging.erisyon.io)
+
+Log in to ArgoCD and verify that all applications are synchronized and no deployments are degraded.
