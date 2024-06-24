@@ -77,10 +77,103 @@ alias awsume=". awsume"
 ``` 
 ##### Commands to Assume Role
 
-###### Assume a Role by Profile Name:
+###### Assume a Profile Name:
         
 ```shell
 alias awsume=". awsume"
 ``` 
         
 - Replace `profile_name` with the name of your AWS profile:
+
+###### Assume a Role by Role ARN
+
+```shell
+awsume --role-arn arn:aws:iam::<account_id>:role/<role_name>
+``` 
+
+###### For example:
+
+```shell
+awsume --role-arn arn:aws:iam::188029688209:role/informatics-eksAdminRole-d354233
+``` 
+
+This command assumes the role specified by the ARN and exports the credentials to your environment.
+
+### 4. Update kubeconfig
+
+Update your kubeconfig file to access the EKS cluster. Replace `informatics` with the appropriate cluster name.
+
+```shell
+aws eks update-kubeconfig --name informatics --region us-east-1
+``` 
+
+This command adds the context for the EKS cluster to your kubeconfig file located at ~/.kube/config.
+
+### 5. Use k9s
+
+Launch k9s to interact with your Kubernetes cluster.
+
+```shell
+k9s
+``` 
+
+##### Switching Contexts
+
+If you have multiple contexts in your kubeconfig, switch between them using the `:ctx` command in k9s.
+
+```shell
+:ctx
+``` 
+This shows a list of available contexts. Select the one corresponding to the cluster you want to manage.
+
+##### Basic k9s Commands
+
+ - View Pods:
+ ```shell
+ :pods
+ ``` 
+ - View Deployments:
+ ```shell
+ :deploy
+ ``` 
+ - View Nodes:
+ ```shell
+ :nodes
+ ``` 
+ - View Services:
+ ```shell
+ :svc
+ ```  
+ - View Namespaces:
+ ```shell
+ :svc
+ ``` 
+ - View ConfigMaps:
+ ```shell
+ :cm
+ ``` 
+ - View Secrets:
+ ```shell
+ :secrets
+ ``` 
+
+##### Navigation
+
+ - Use arrow keys to navigate through the resource lists.
+ - Press `Enter` to view details.
+ - Press `Esc` to go back.
+
+##### Switch Namespaces
+
+To switch between namespaces, press `:ns` and select the desired namespace.
+
+##### View Logs
+
+To view logs of a pod, select the pod and press `l` (lowercase L).
+
+## References
+
+k9s Official Documentation
+AWS CLI EKS Update-kubeconfig
+[`k9s Official Documentation`](https://k9scli.io/).
+[`AWS CLI EKS Update-kubeconfig`](https://docs.aws.amazon.com/cli/latest/reference/eks/update-kubeconfig.html).
