@@ -22,4 +22,4 @@ Before assuming the IAM role for the cluster, configure your AWS CLI with your c
 aws configure --profile “profile_name”
 ```
 
- ## - Replace profile_name with the name of your AWS profile.
+ - Replace profile_name with the name of your AWS profile.
