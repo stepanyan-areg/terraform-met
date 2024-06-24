@@ -62,11 +62,11 @@ export AWS_SESSION_TOKEN="YourSessionToken"
 
 ##### Installation
 
-    Awsume requires Python 3.5 or greater. Install AWSume using pipx:
+Awsume requires Python 3.5 or greater. Install AWSume using pipx:
 
-    ```shell
-    pipx install awsume
-    ``` 
+```shell
+pipx install awsume
+``` 
 
     ##### Alias Setup
 
