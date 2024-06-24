@@ -60,7 +60,7 @@ export AWS_SESSION_TOKEN="YourSessionToken"
 
 [`AWSume`](https://awsu.me/general/overview.html) simplifies the process of assuming roles and managing AWS credentials. Here’s how to install and use AWSume:
 
-##### Installation
+#### Installation
 
 Awsume requires Python 3.5 or greater. Install AWSume using pipx:
 
@@ -68,13 +68,13 @@ Awsume requires Python 3.5 or greater. Install AWSume using pipx:
 pipx install awsume
 ``` 
 
-    ##### Alias Setup
+##### Alias Setup
 
-    For unix-like systems, set up an alias for AWSume:
+For unix-like systems, set up an alias for AWSume:
 
-    ```shell
-    alias awsume=". awsume"
-    ``` 
+```shell
+alias awsume=". awsume"
+``` 
     ##### Commands to Assume Role
 
         ##### Assume a Role by Profile Name:
