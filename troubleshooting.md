@@ -173,7 +173,6 @@ To view logs of a pod, select the pod and press `l` (lowercase L).
 
 ## References
 
-k9s Official Documentation
-AWS CLI EKS Update-kubeconfig
 [`k9s Official Documentation`](https://k9scli.io/).
+
 [`AWS CLI EKS Update-kubeconfig`](https://docs.aws.amazon.com/cli/latest/reference/eks/update-kubeconfig.html).
