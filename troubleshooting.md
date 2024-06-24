@@ -75,12 +75,12 @@ For unix-like systems, set up an alias for AWSume:
 ```shell
 alias awsume=". awsume"
 ``` 
-    ##### Commands to Assume Role
+##### Commands to Assume Role
 
-        ##### Assume a Role by Profile Name:
+###### Assume a Role by Profile Name:
         
-            ```shell
-            alias awsume=". awsume"
-            ``` 
+```shell
+alias awsume=". awsume"
+``` 
         
-    - Replace `profile_name` with the name of your AWS profile:
+- Replace `profile_name` with the name of your AWS profile:
