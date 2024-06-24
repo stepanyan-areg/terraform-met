@@ -206,3 +206,13 @@ If Tailnet is connected and you still have issues accessing the services, check 
  - [`Staging Cluster`](http://argocd-staging.erisyon.io)
 
 Log in to ArgoCD and verify that all applications are synchronized and no deployments are degraded.
+
+## 3.Check Relevant Namespaces
+
+Ensure you are looking in the correct namespace for the service you are troubleshooting. Each service runs in a specific namespace:
+
+ - Flyte Services: Check the flyte namespace.
+ - Erisyon ControlPanel: Check the internal namespace.
+ - Coder Services: Check the namespaces relevant to Coder setups.
+
+ 
