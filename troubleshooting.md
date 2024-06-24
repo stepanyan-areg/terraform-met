@@ -215,4 +215,20 @@ Ensure you are looking in the correct namespace for the service you are troubles
  - Erisyon ControlPanel: Check the internal namespace.
  - Coder Services: Check the namespaces relevant to Coder setups.
 
- 
+## 4. Verify Traefik Configuration 
+
+Traefik is used as the ingress controller. Check if there are any issues with Traefik that might be causing access problems:
+
+### Check Traefik Pods:
+
+ ```shell
+ kubectl get pods -n traefik
+ ``` 
+
+Use `:pods` and navigate to the `traefik` namespace in `k9s`.
+
+### Additional Tips
+
+ - Logs: View logs of relevant pods to get more details on potential issues. Use `l` in k9s to view logs of a selected pod.
+ - Restart Pods: Sometimes restarting a pod can resolve transient issues. Use `kubectl delete pod <pod-name> -n <namespace>` to delete and restart a pod, or use `d` in k9s.
+ - ArgoCD Sync: Ensure that all resources are in sync. Check ArgoCD for any out-of-sync applications and perform a manual sync if necessary.
