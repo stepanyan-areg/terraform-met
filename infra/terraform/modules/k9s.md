@@ -12,8 +12,6 @@ Ensure that k9s is installed on your machine. You can install it using Homebrew 
 brew install k9s
 ```
 
-brew install k9s
-
 ### 2. Configure AWS CLI
 
 Before assuming the IAM role for the cluster, configure your AWS CLI with your credentials.
