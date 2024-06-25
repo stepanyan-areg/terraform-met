@@ -22,7 +22,7 @@ Before assuming the IAM role for the cluster, configure your AWS CLI with your c
 aws configure --profile “profile_name”
 ```
 
- - Replace `profile_name` with the name of your AWS profile.
+- Replace `profile_name` with the name of your AWS profile.
 
 ### 3. Assume the IAM Role for the Cluster
 
@@ -30,19 +30,19 @@ aws configure --profile “profile_name”
 
 Use the AWS CLI to assume the IAM role for the desired EKS cluster. You have different roles for each cluster: 
 
- - Informatics Cluster:
+- Informatics Cluster:
 
         ```shell
         aws sts assume-role --role-arn arn:aws:iam::188029688209:role/informatics-eksAdminRole-d354233 --role-session-name informatics
         ```
 
- - Software Cluster:
+- Software Cluster:
 
         ```shell
         aws sts assume-role --role-arn arn:aws:iam::188029688209:role/software-eksAdminRole-357ff84 --role-session-name software
         ```        
 
- - Staging Cluster:
+- Staging Cluster:
 
         ```shell
         aws sts assume-role --role-arn arn:aws:iam::188029688209:role/staging-eksAdminRole-476bb6b --role-session-name staging
@@ -128,40 +128,40 @@ This shows a list of available contexts. Select the one corresponding to the clu
 
 ##### Basic k9s Commands
 
- - View Pods:
- ```shell
- :pods
- ``` 
- - View Deployments:
- ```shell
- :deploy
- ``` 
- - View Nodes:
- ```shell
- :nodes
- ``` 
- - View Services:
- ```shell
- :svc
- ```  
- - View Namespaces:
- ```shell
- :svc
- ``` 
- - View ConfigMaps:
- ```shell
- :cm
- ``` 
- - View Secrets:
- ```shell
- :secrets
- ``` 
+- View Pods:
+```shell
+:pods
+``` 
+- View Deployments:
+```shell
+:deploy
+``` 
+- View Nodes:
+```shell
+:nodes
+``` 
+- View Services:
+```shell
+:svc
+```  
+- View Namespaces:
+```shell
+:svc
+``` 
+- View ConfigMaps:
+```shell
+:cm
+``` 
+- View Secrets:
+```shell
+:secrets
+``` 
 
 ##### Navigation
 
- - Use arrow keys to navigate through the resource lists.
- - Press `Enter` to view details.
- - Press `Esc` to go back.
+- Use arrow keys to navigate through the resource lists.
+- Press `Enter` to view details.
+- Press `Esc` to go back.
 
 ##### Switch Namespaces
 
