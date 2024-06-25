@@ -1,6 +1,6 @@
 # Using k9s to Interact with Kubernetes Clusters
 
- To interact with your Kubernetes clusters using k9s when you cannot start a Coder development workspace, follow the detailed steps and commands outlined below. This guide assumes you have AWS CLI, kubectl, and k9s installed on your local machine. 
+To interact with your Kubernetes clusters using k9s when you cannot start a Coder development workspace, follow the detailed steps and commands outlined below. This guide assumes you have AWS CLI, kubectl, and k9s installed on your local machine.
 
 ## Step-by-Step Guide
 
@@ -16,7 +16,7 @@ brew install k9s
 
 Before assuming the IAM role for the cluster, configure your AWS CLI with your credentials.
 
- ```shell
+```shell
 aws configure --profile “profile_name”
 ```
 
@@ -26,7 +26,7 @@ aws configure --profile “profile_name”
 
 #### 3.1 Manual Method
 
- Use the AWS CLI to assume the IAM role for the desired EKS cluster. You have different roles for each cluster: 
+Use the AWS CLI to assume the IAM role for the desired EKS cluster. You have different roles for each cluster:
 
 - Informatics Cluster:
 
@@ -38,21 +38,21 @@ aws sts assume-role --role-arn arn:aws:iam::188029688209:role/informatics-eksAdm
 
 ```shell
 aws sts assume-role --role-arn arn:aws:iam::188029688209:role/software-eksAdminRole-357ff84 --role-session-name software
-```        
+```
 
 - Staging Cluster:
 
 ```shell
 aws sts assume-role --role-arn arn:aws:iam::188029688209:role/staging-eksAdminRole-476bb6b --role-session-name staging
-```   
+```
 
- The command returns temporary credentials. Export these credentials as environment variables:        
-       
- ```shell
+The command returns temporary credentials. Export these credentials as environment variables:
+
+```shell
 export AWS_ACCESS_KEY_ID="YourAccessKeyId"
 export AWS_SECRET_ACCESS_KEY="YourSecretAccessKey"
 export AWS_SESSION_TOKEN="YourSessionToken"
-``` 
+```
 
 #### 3.2 Using AWSume
 
@@ -62,38 +62,39 @@ export AWS_SESSION_TOKEN="YourSessionToken"
 
 Awsume requires Python 3.5 or greater. Install AWSume using pipx:
 
- ```shell
+```shell
 pipx install awsume
-``` 
+```
 
 ##### Alias Setup
 
 For unix-like systems, set up an alias for AWSume:
 
- ```shell
+```shell
 alias awsume=". awsume"
-``` 
+```
+
 ##### Commands to Assume Role
 
 ###### Assume a Profile Name:
-        
- ```shell
+
+```shell
 awsume profile_name
-``` 
-        
+```
+
 - Replace `profile_name` with the name of your AWS profile:
 
 ###### Assume a Role by Role ARN
 
- ```shell
+```shell
 awsume --role-arn arn:aws:iam::<account_id>:role/<role_name>
-``` 
+```
 
 ###### For example:
 
- ```shell
+```shell
 awsume --role-arn arn:aws:iam::188029688209:role/informatics-eksAdminRole-d354233
-``` 
+```
 
 This command assumes the role specified by the ARN and exports the credentials to your environment.
 
@@ -101,9 +102,9 @@ This command assumes the role specified by the ARN and exports the credentials t
 
 Update your kubeconfig file to access the EKS cluster. Replace `informatics` with the appropriate cluster name.
 
- ```shell
+```shell
 aws eks update-kubeconfig --name informatics --region us-east-1
-``` 
+```
 
 This command adds the context for the EKS cluster to your kubeconfig file located at ~/.kube/config.
 
@@ -111,49 +112,63 @@ This command adds the context for the EKS cluster to your kubeconfig file locate
 
 Launch k9s to interact with your Kubernetes cluster.
 
- ```shell
+```shell
 k9s
-``` 
+```
 
 ##### Switching Contexts
 
 If you have multiple contexts in your kubeconfig, switch between them using the `:ctx` command in k9s.
 
- ```shell
+```shell
 :ctx
-``` 
+```
+
 This shows a list of available contexts. Select the one corresponding to the cluster you want to manage.
 
 ##### Basic k9s Commands
 
 - View Pods:
- ```shell
+
+```shell
 :pods
-``` 
+```
+
 - View Deployments:
+
 ```shell
 :deploy
-``` 
+```
+
 - View Nodes:
+
 ```shell
 :nodes
-``` 
+```
+
 - View Services:
+
 ```shell
 :svc
-```  
+```
+
 - View Namespaces:
+
 ```shell
 :svc
-``` 
+```
+
 - View ConfigMaps:
+
 ```shell
 :cm
-``` 
+```
+
 - View Secrets:
+
 ```shell
 :secrets
-``` 
+```
 
 ##### Navigation
 

@@ -11,11 +11,12 @@ Ensure that your device is connected to the Tailnet. Many of the services requir
 If Tailnet is connected and you still have issues accessing the services, check the cluster’s health:
 
 ### 2.1 Access the Cluster and Check Pods
+
 Use `kubectl` or `k9s` to check if the necessary pods are running.
 
 ```shell
 kubectl get pods -n <namespace>
-``` 
+```
 
 Use `:pods` in k9s and navigate to the relevant namespace.
 
@@ -35,7 +36,7 @@ Ensure you are looking in the correct namespace for the service you are troubles
 - Erisyon ControlPanel: Check the internal namespace.
 - Coder Services: Check the namespaces relevant to Coder setups.
 
-## 4. Verify Traefik Configuration 
+## 4. Verify Traefik Configuration
 
 Traefik is used as the ingress controller. Check if there are any issues with Traefik that might be causing access problems:
 
@@ -43,7 +44,7 @@ Traefik is used as the ingress controller. Check if there are any issues with Tr
 
 ```shell
 kubectl get pods -n traefik
-``` 
+```
 
 Use `:pods` and navigate to the `traefik` namespace in `k9s`.
 
